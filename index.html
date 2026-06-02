@@ -1,2 +1,1151 @@
 <!DOCTYPE html>
-hello this is prvicy page 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Grid — Privacy Policy & Terms of Service</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f9fafb;
+            --border: #e5e7eb;
+            --text: #1f2937;
+            --text-secondary: #4b5563;
+            --text-tertiary: #6b7280;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --accent-hover: #1d4ed8;
+            --sidebar-width: 260px;
+            --header-height: 64px;
+            --tab-height: 52px;
+            --radius: 8px;
+            --radius-sm: 6px;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+            --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height) + var(--tab-height) + 24px);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── HEADER ───────────────────── */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            gap: 14px;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.92);
+        }
+        .header-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            background: #1f2937;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: -0.3px;
+            flex-shrink: 0;
+        }
+        .header-title {
+            font-weight: 600;
+            font-size: 17px;
+            color: var(--text);
+            letter-spacing: -0.2px;
+        }
+        .header-badge {
+            font-size: 11px;
+            font-weight: 500;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+        .header-right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-link {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition);
+        }
+        .header-link:hover {
+            color: var(--accent);
+        }
+
+        /* ── TAB BAR ──────────────────── */
+        .tab-bar {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 99;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 0;
+            padding: 0 24px;
+            height: var(--tab-height);
+            align-items: stretch;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(6px);
+        }
+        .tab-btn {
+            all: unset;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            padding: 0 20px;
+            border-bottom: 2px solid transparent;
+            transition: all var(--transition);
+            letter-spacing: -0.1px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .tab-btn:hover {
+            color: var(--text);
+            background: var(--surface);
+        }
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            font-weight: 600;
+        }
+        .tab-icon {
+            font-size: 15px;
+        }
+
+        /* ── LAYOUT ──────────────────── */
+        .main-container {
+            display: flex;
+            flex: 1;
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            position: sticky;
+            top: calc(var(--header-height) + var(--tab-height));
+            height: calc(100vh - var(--header-height) - var(--tab-height));
+            overflow-y: auto;
+            padding: 20px 16px 32px 24px;
+            border-right: 1px solid var(--border);
+            background: var(--bg);
+            scrollbar-width: thin;
+            scrollbar-color: #d1d5db transparent;
+        }
+        .sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+        .sidebar-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .sidebar-nav li a {
+            display: block;
+            padding: 7px 12px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition);
+            letter-spacing: -0.1px;
+            border-left: 2px solid transparent;
+            margin-left: -2px;
+        }
+        .sidebar-nav li a:hover {
+            background: var(--surface);
+            color: var(--text);
+        }
+        .sidebar-nav li a.active {
+            background: var(--accent-light);
+            color: var(--accent);
+            font-weight: 600;
+            border-left-color: var(--accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .sidebar-section-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-tertiary);
+            padding: 14px 12px 6px;
+            font-weight: 700;
+        }
+        .sidebar-section-label:first-child {
+            padding-top: 2px;
+        }
+
+        /* ── CONTENT ─────────────────── */
+        .content {
+            flex: 1;
+            padding: 32px 40px 64px;
+            min-width: 0;
+            max-width: 820px;
+        }
+        .policy-content {
+            display: none;
+        }
+        .policy-content.active {
+            display: block;
+            animation: fadeSlideIn 0.35s ease;
+        }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 14px;
+            letter-spacing: -0.3px;
+            scroll-margin-top: calc(var(--header-height) + var(--tab-height) + 20px);
+        }
+        .section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 18px 0 8px;
+            letter-spacing: -0.2px;
+        }
+        .section p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.75;
+        }
+        .section ul,
+        .section ol {
+            margin: 8px 0 14px 20px;
+            color: var(--text-secondary);
+            font-size: 14.5px;
+            line-height: 1.8;
+        }
+        .section ul li,
+        .section ol li {
+            margin-bottom: 4px;
+        }
+        .section strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .highlight-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-left: 3px solid var(--accent);
+        }
+        .highlight-box.warning {
+            border-left-color: #f59e0b;
+            background: #fffbeb;
+        }
+        .highlight-box.danger {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+        }
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .last-updated {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        .definition-list {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 6px 16px;
+            font-size: 14px;
+            margin: 10px 0 16px;
+        }
+        .definition-list dt {
+            font-weight: 600;
+            color: var(--text);
+        }
+        .definition-list dd {
+            color: var(--text-secondary);
+        }
+
+        /* ── MOBILE TOGGLE ───────────── */
+        .mobile-sidebar-toggle {
+            display: none;
+            all: unset;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 200;
+            background: var(--text);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            transition: all var(--transition);
+        }
+        .mobile-sidebar-toggle:active {
+            transform: scale(0.94);
+        }
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 150;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .sidebar-overlay.show {
+            display: block;
+        }
+
+        /* ── FOOTER ──────────────────── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 20px 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            background: var(--surface);
+            letter-spacing: 0.2px;
+        }
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── RESPONSIVE ──────────────── */
+        @media (max-width: 900px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                z-index: 160;
+                transform: translateX(-100%);
+                transition: transform var(--transition);
+                box-shadow: var(--shadow-md);
+                padding-top: 80px;
+                width: 280px;
+                border-right: 1px solid var(--border);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .mobile-sidebar-toggle {
+                display: flex;
+            }
+            .content {
+                padding: 24px 20px 48px;
+                max-width: 100%;
+            }
+            .tab-bar {
+                padding: 0 12px;
+                gap: 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .tab-btn {
+                padding: 0 14px;
+                font-size: 13px;
+                flex-shrink: 0;
+            }
+            .header {
+                padding: 0 16px;
+            }
+            .header-badge {
+                display: none;
+            }
+            .header-right {
+                gap: 6px;
+            }
+            .section h2 {
+                font-size: 19px;
+            }
+            .definition-list {
+                grid-template-columns: 1fr;
+                gap: 2px 0;
+            }
+            .definition-list dt {
+                margin-top: 8px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 14px;
+            }
+            .header-logo {
+                width: 30px;
+                height: 30px;
+                font-size: 13px;
+            }
+            .tab-btn {
+                font-size: 12px;
+                padding: 0 10px;
+            }
+            .content {
+                padding: 18px 14px 40px;
+            }
+            .section h2 {
+                font-size: 17px;
+            }
+            .section p {
+                font-size: 14px;
+            }
+        }
+        @media print {
+            .sidebar,
+            .tab-bar,
+            .header,
+            .footer,
+            .mobile-sidebar-toggle,
+            .sidebar-overlay {
+                display: none !important;
+            }
+            .content {
+                max-width: 100%;
+                padding: 0;
+            }
+            .policy-content {
+                display: block !important;
+            }
+            .section {
+                page-break-inside: avoid;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="header">
+        <div class="header-logo">LG</div>
+        <span class="header-title">LLM Grid</span>
+        <span class="header-badge">Open Source</span>
+        <div class="header-right">
+            <a href="https://github.com/krunalrana/llm-grid" class="header-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:support@llmgrid.com" class="header-link">Contact</a>
+        </div>
+    </header>
+
+    <!-- ═══════════ TAB BAR ═══════════ -->
+    <nav class="tab-bar" id="tabBar">
+        <button class="tab-btn active" data-tab="privacy" aria-selected="true">
+            <span class="tab-icon">🔒</span> Privacy Policy
+        </button>
+        <button class="tab-btn" data-tab="terms" aria-selected="false">
+            <span class="tab-icon">📄</span> Terms &amp; Conditions
+        </button>
+    </nav>
+
+    <!-- ═══════════ MAIN LAYOUT ═══════════ -->
+    <div class="main-container" id="mainContainer">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav aria-label="Table of Contents">
+                <ul class="sidebar-nav" id="sidebarNav">
+                    <!-- Dynamically populated by JS -->
+                </ul>
+            </nav>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Content -->
+        <main class="content" id="contentArea">
+            <!-- PRIVACY POLICY ───────────── -->
+            <article class="policy-content active" id="policy-privacy">
+                <p class="last-updated">Last updated: <strong>June 2, 2026</strong> &mdash; Effective immediately for all users.</p>
+
+                <!-- 1. Introduction -->
+                <section class="section" id="pp-introduction">
+                    <h2>1. Introduction</h2>
+                    <p><strong>LLM Grid</strong> (&ldquo;the Application&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is an open-source software project developed by <strong>Krunal Rana</strong>. This Privacy Policy describes how we collect, use, store, and protect your information when you use LLM Grid — whether through a self-hosted deployment, a hosted service we may offer, or any other interaction with the Application.</p>
+                    <p>We are committed to transparency and data minimization. <strong>We do not sell your personal data, your prompts, or your API credentials.</strong> By using LLM Grid, you acknowledge the practices described in this policy.</p>
+                    <div class="highlight-box">
+                        <strong>Key Principle</strong>
+                        LLM Grid is a conduit — it connects you to third-party AI providers. Your prompts pass through the Application to the provider(s) you select. We store as little as possible on our own infrastructure.
+                    </div>
+                </section>
+
+                <!-- 2. Information We Collect -->
+                <section class="section" id="pp-information-we-collect">
+                    <h2>2. Information We Collect</h2>
+                    <p>We collect only the minimum information necessary to operate, improve, and secure the Application. This falls into the following categories:</p>
+                    <dl class="definition-list">
+                        <dt>Account Data</dt>
+                        <dd>If a hosted version requires registration, we may collect your name, email address, and a hashed password. Self-hosted instances collect no account data on our servers.</dd>
+                        <dt>Usage Analytics</dt>
+                        <dd>Basic, anonymized metrics such as page views, feature usage frequency, and aggregated request counts. We use privacy-respecting analytics where possible.</dd>
+                        <dt>Error Logs</dt>
+                        <dd>Diagnostic logs including stack traces, timestamps, and anonymized request identifiers to help us debug crashes and improve stability.</dd>
+                        <dt>Configuration Metadata</dt>
+                        <dd>Non-sensitive settings such as selected provider names, model preferences, and theme choices — stored locally or on our hosted servers.</dd>
+                    </dl>
+                    <p><strong>We do NOT collect:</strong> the content of your prompts, the AI-generated responses, or your API keys on our central servers (see Section 3).</p>
+                </section>
+
+                <!-- 3. API Keys and Credentials -->
+                <section class="section" id="pp-api-keys">
+                    <h2>3. API Keys and Credentials</h2>
+                    <p>LLM Grid allows you to connect your own third-party API keys (e.g., from OpenAI, Anthropic, Google, etc.). Here is how we handle them:</p>
+                    <ul>
+                        <li><strong>Self-Hosted Deployments:</strong> API keys are stored exclusively on your own infrastructure — in environment variables, a local database, or secure vault of your choosing. We have no access to them.</li>
+                        <li><strong>Hosted Version (if applicable):</strong> Keys are encrypted at rest using AES-256-GCM and transmitted only over HTTPS. They are stored in a segregated credential store and are never logged or exposed in plaintext.</li>
+                        <li><strong>Transmission:</strong> Keys are forwarded solely to the AI provider(s) you explicitly select for each request. They are never sent to any other third party.</li>
+                    </ul>
+                    <div class="highlight-box warning">
+                        <strong>Your Responsibility</strong>
+                        You are responsible for the security of your own API keys. We recommend rotating keys regularly and using provider-side usage limits. LLM Grid is not liable for unauthorized charges resulting from compromised keys.
+                    </div>
+                </section>
+
+                <!-- 4. How Information Is Used -->
+                <section class="section" id="pp-how-information-is-used">
+                    <h2>4. How Information Is Used</h2>
+                    <p>We use the limited information we collect solely for the following purposes:</p>
+                    <ol>
+                        <li><strong>Service Operation</strong> — to route your requests to the correct AI provider and return responses.</li>
+                        <li><strong>Performance &amp; Reliability</strong> — to monitor uptime, detect anomalies, and optimize response latency.</li>
+                        <li><strong>Bug Fixing</strong> — to diagnose and resolve software errors through error logs and crash reports.</li>
+                        <li><strong>Product Improvement</strong> — aggregated, anonymized analytics help us understand which features are most valuable.</li>
+                        <li><strong>Communication</strong> — if you contact us via email, we use your email address solely to respond to your inquiry.</li>
+                    </ol>
+                    <p>We do not use your data for advertising, profiling, or automated decision-making.</p>
+                </section>
+
+                <!-- 5. Third-Party AI Providers -->
+                <section class="section" id="pp-third-party-ai">
+                    <h2>5. Third-Party AI Providers</h2>
+                    <p>LLM Grid integrates with multiple AI/LLM providers and aggregators. When you submit a prompt, it is transmitted directly to the provider(s) you have configured. <strong>Each provider has its own privacy policy and data handling practices.</strong> We strongly encourage you to review them:</p>
+                    <ul>
+                        <li>OpenAI — <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                        <li>Anthropic — <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                        <li>Google (Gemini) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                        <li>Other providers as configured by you.</li>
+                    </ul>
+                    <p>LLM Grid does not control how these providers process, store, or use your prompts. Some providers may retain prompts for training or safety purposes depending on their own policies and your agreement with them.</p>
+                </section>
+
+                <!-- 6. Data Retention -->
+                <section class="section" id="pp-data-retention">
+                    <h2>6. Data Retention</h2>
+                    <ul>
+                        <li><strong>Error Logs:</strong> Retained for up to 30 days, then automatically purged.</li>
+                        <li><strong>Analytics Data:</strong> Aggregated and anonymized; retained indefinitely in aggregate form. Individual event-level data is discarded after 90 days.</li>
+                        <li><strong>Account Data (hosted version):</strong> Retained until you delete your account or request removal. Deletion is processed within 14 business days.</li>
+                        <li><strong>API Keys (hosted version):</strong> Immediately deleted upon account termination or key removal from the interface.</li>
+                    </ul>
+                </section>
+
+                <!-- 7. Security Measures -->
+                <section class="section" id="pp-security">
+                    <h2>7. Security Measures</h2>
+                    <p>We implement industry-standard security practices to protect your information:</p>
+                    <ul>
+                        <li>All communications use <strong>TLS 1.3</strong> (HTTPS) encryption in transit.</li>
+                        <li>Sensitive credentials are encrypted at rest using <strong>AES-256-GCM</strong>.</li>
+                        <li>We follow the principle of <strong>least privilege</strong> for all internal access.</li>
+                        <li>Regular dependency audits and vulnerability scanning are part of our CI/CD pipeline.</li>
+                        <li>The open-source codebase allows independent security review by the community.</li>
+                    </ul>
+                    <p>However, no system is 100% secure. In the event of a data breach affecting hosted users, we will notify affected parties within 72 hours of discovery.</p>
+                </section>
+
+                <!-- 8. Cookies and Analytics -->
+                <section class="section" id="pp-cookies">
+                    <h2>8. Cookies and Analytics</h2>
+                    <p>The hosted version of LLM Grid may use minimal cookies:</p>
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> Session tokens for authentication (if applicable). These are strictly necessary and do not track you across sites.</li>
+                        <li><strong>Analytics:</strong> We may use privacy-focused, self-hosted analytics (e.g., Plausible or Umami) that do not use cookies and are GDPR-compliant out of the box. No personal data is collected via analytics.</li>
+                    </ul>
+                    <p>The self-hosted version does not include any tracking mechanisms by default. You control your own deployment.</p>
+                </section>
+
+                <!-- 9. User Rights -->
+                <section class="section" id="pp-user-rights">
+                    <h2>9. User Rights</h2>
+                    <p>Depending on your jurisdiction (including under GDPR, CCPA, and similar laws), you may have the following rights:</p>
+                    <ul>
+                        <li><strong>Right of Access</strong> — Request a copy of any personal data we hold about you.</li>
+                        <li><strong>Right to Rectification</strong> — Correct inaccurate or incomplete data.</li>
+                        <li><strong>Right to Erasure</strong> — Request deletion of your personal data (&ldquo;right to be forgotten&rdquo;).</li>
+                        <li><strong>Right to Restrict Processing</strong> — Limit how we use your data.</li>
+                        <li><strong>Right to Data Portability</strong> — Receive your data in a structured, machine-readable format.</li>
+                        <li><strong>Right to Object</strong> — Object to processing based on legitimate interests.</li>
+                    </ul>
+                    <p>To exercise any of these rights, contact us at <a href="mailto:support@llmgrid.com">support@llmgrid.com</a>. We will respond within 30 days. Note: self-hosted users control their own data; we have no access to it.</p>
+                </section>
+
+                <!-- 10. International Users -->
+                <section class="section" id="pp-international">
+                    <h2>10. International Users</h2>
+                    <p>LLM Grid is developed in <strong>India</strong>. If you access the Application from outside India, your data may be transferred to, stored, and processed in India or other countries where our hosting infrastructure is located. By using the Application, you consent to such transfer. We ensure appropriate safeguards (such as standard contractual clauses) are in place for any cross-border data transfers.</p>
+                </section>
+
+                <!-- 11. Children's Privacy -->
+                <section class="section" id="pp-children">
+                    <h2>11. Children&rsquo;s Privacy</h2>
+                    <p>LLM Grid is not intended for use by individuals under the age of <strong>13</strong> (or the applicable digital consent age in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal data, we will promptly delete it. Parents or guardians who believe their child has submitted personal information should contact us immediately.</p>
+                </section>
+
+                <!-- 12. Changes to This Policy -->
+                <section class="section" id="pp-changes">
+                    <h2>12. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated &ldquo;Last updated&rdquo; date. For material changes affecting hosted users, we will provide notice via email (if available) or through an in-app banner. Continued use after changes constitutes acceptance. We encourage you to review this policy periodically.</p>
+                </section>
+
+                <!-- 13. Contact Information -->
+                <section class="section" id="pp-contact">
+                    <h2>13. Contact Information</h2>
+                    <p>If you have questions, concerns, or wish to exercise your data rights, please contact:</p>
+                    <div class="highlight-box">
+                        <strong>Data Protection Contact</strong>
+                        Krunal Rana<br>
+                        Email: <a href="mailto:support@llmgrid.com">support@llmgrid.com</a><br>
+                        GitHub: <a href="https://github.com/krunalrana/llm-grid" target="_blank" rel="noopener">github.com/krunalrana/llm-grid</a>
+                    </div>
+                </section>
+
+                <!-- 14. Open Source Disclaimer -->
+                <section class="section" id="pp-open-source">
+                    <h2>14. Open Source Disclaimer</h2>
+                    <p>LLM Grid is distributed as open-source software under its respective license. This Privacy Policy applies to the official hosted version (if any) and to the project&rsquo;s online presence. <strong>Self-hosted deployments are entirely under the control of the user deploying them.</strong> We bear no responsibility for how self-hosted instances collect, store, or process data. If you deploy LLM Grid yourself, you are the data controller and must provide your own privacy notice to your users.</p>
+                </section>
+            </article>
+
+            <!-- TERMS & CONDITIONS ────────── -->
+            <article class="policy-content" id="policy-terms">
+                <p class="last-updated">Last updated: <strong>June 2, 2026</strong> &mdash; Effective immediately for all users.</p>
+
+                <!-- 1. Acceptance -->
+                <section class="section" id="tc-acceptance">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing, installing, or using <strong>LLM Grid</strong> (&ldquo;the Software&rdquo;), you agree to be bound by these Terms &amp; Conditions (&ldquo;Terms&rdquo;). If you do not agree, do not use the Software. These Terms constitute a legally binding agreement between you (&ldquo;User&rdquo; or &ldquo;you&rdquo;) and <strong>Krunal Rana</strong> (&ldquo;Developer&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;).</p>
+                </section>
+
+                <!-- 2. Description of Service -->
+                <section class="section" id="tc-description">
+                    <h2>2. Description of Service</h2>
+                    <p>LLM Grid is an open-source application that provides a unified interface to access and interact with multiple third-party AI/LLM providers and aggregators. The Software may be available as:</p>
+                    <ul>
+                        <li>A <strong>self-hosted</strong> version that you deploy on your own infrastructure.</li>
+                        <li>A <strong>hosted service</strong> (if offered) operated by the Developer.</li>
+                    </ul>
+                    <p>LLM Grid does not own, operate, or control any of the underlying AI models. It functions solely as an interface and router.</p>
+                </section>
+
+                <!-- 3. User Responsibilities -->
+                <section class="section" id="tc-user-responsibilities">
+                    <h2>3. User Responsibilities</h2>
+                    <p>You are solely responsible for:</p>
+                    <ul>
+                        <li>Obtaining and maintaining valid API keys from third-party AI providers.</li>
+                        <li>All costs, charges, and billing associated with your use of those providers.</li>
+                        <li>Configuring the Software correctly and securely.</li>
+                        <li>Complying with all applicable laws and third-party provider policies.</li>
+                        <li>All content you submit as prompts and all outputs generated.</li>
+                    </ul>
+                </section>
+
+                <!-- 4. API Key Usage -->
+                <section class="section" id="tc-api-key-usage">
+                    <h2>4. API Key Usage</h2>
+                    <p>You retain full ownership of your API keys. By entering them into LLM Grid, you authorize the Software to transmit those keys to the AI providers you select for the purpose of fulfilling your requests. You may revoke this authorization at any time by removing keys from the configuration. We are not responsible for any charges, overages, or account suspensions imposed by third-party providers.</p>
+                </section>
+
+                <!-- 5. Third-Party Services Disclaimer -->
+                <section class="section" id="tc-third-party-disclaimer">
+                    <h2>5. Third-Party Services Disclaimer</h2>
+                    <div class="highlight-box danger">
+                        <strong>Important Disclaimer</strong>
+                        LLM Grid integrates with third-party AI services over which we have no control. We make no representations, warranties, or guarantees regarding the availability, accuracy, safety, or legality of outputs from these services. Your use of third-party providers is at your own risk and is governed solely by their respective terms and policies.
+                    </div>
+                    <p>We are not a party to any agreement between you and any third-party AI provider. Any disputes regarding API access, billing, content moderation, or service quality must be resolved directly with the provider.</p>
+                </section>
+
+                <!-- 6. Open Source License -->
+                <section class="section" id="tc-open-source-license">
+                    <h2>6. Open Source License Notice</h2>
+                    <p>LLM Grid is distributed as open-source software. The specific license terms are included in the project repository (LICENSE file). You may use, modify, and distribute the Software in accordance with that license. Contributions to the project are welcome and governed by the same license. Contributors retain their individual rights but grant the project a perpetual, worldwide, royalty-free license to use their contributions.</p>
+                </section>
+
+                <!-- 7. Intellectual Property -->
+                <section class="section" id="tc-intellectual-property">
+                    <h2>7. Intellectual Property</h2>
+                    <p><strong>Our IP:</strong> The LLM Grid name, logo, source code (except third-party dependencies), documentation, and design elements are the intellectual property of Krunal Rana and/or the open-source contributors, protected by applicable copyright and trademark laws.</p>
+                    <p><strong>Your IP:</strong> You retain all rights to the prompts you submit and the content you generate. LLM Grid claims no ownership over user-generated inputs or outputs. However, by using hosted services, you grant us a limited, non-exclusive license to process and transmit your content solely as necessary to provide the service.</p>
+                </section>
+
+                <!-- 8. Acceptable Use -->
+                <section class="section" id="tc-acceptable-use">
+                    <h2>8. Acceptable Use Policy</h2>
+                    <p>You agree to use LLM Grid only for lawful purposes. Acceptable use includes, but is not limited to:</p>
+                    <ul>
+                        <li>Personal productivity and research.</li>
+                        <li>Software development and testing.</li>
+                        <li>Educational and academic purposes.</li>
+                        <li>Commercial use in compliance with all applicable laws.</li>
+                    </ul>
+                </section>
+
+                <!-- 9. Prohibited Activities -->
+                <section class="section" id="tc-prohibited">
+                    <h2>9. Prohibited Activities</h2>
+                    <p>You must <strong>NOT</strong> use LLM Grid for any of the following:</p>
+                    <ul>
+                        <li>Generating or distributing illegal content, hate speech, harassment, or abuse.</li>
+                        <li>Infringing copyrights, trademarks, or other intellectual property rights.</li>
+                        <li>Creating malware, phishing content, or facilitating cyberattacks.</li>
+                        <li>Generating sexually explicit content involving minors or non-consenting individuals.</li>
+                        <li>Automated scraping or overwhelming third-party APIs beyond rate limits.</li>
+                        <li>Bypassing content safety filters of third-party providers.</li>
+                        <li>Any activity that violates applicable local, national, or international laws.</li>
+                    </ul>
+                    <div class="highlight-box danger">
+                        <strong>Zero Tolerance</strong>
+                        Violation of these prohibitions may result in immediate termination of access to any hosted services and a permanent ban. We reserve the right to report illegal activities to law enforcement.
+                    </div>
+                </section>
+
+                <!-- 10. Limitation of Liability -->
+                <section class="section" id="tc-limitation">
+                    <h2>10. Limitation of Liability</h2>
+                    <p><strong>To the maximum extent permitted by law:</strong></p>
+                    <ul>
+                        <li>LLM Grid, its developer(s), and contributors shall <strong>not</strong> be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to: loss of profits, data loss, API cost overruns, business interruption, or reputational harm.</li>
+                        <li>Our total aggregate liability for any claim arising from the use of the Software shall not exceed the greater of: (a) the amount you paid us (if any) in the 12 months preceding the claim, or (b) <strong>₹1,000 INR</strong> (approximately $12 USD).</li>
+                        <li>We are not liable for AI-generated outputs, their accuracy, or any consequences of relying on them.</li>
+                    </ul>
+                    <p>This limitation applies regardless of the legal theory — contract, tort (including negligence), strict liability, or otherwise — even if we were advised of the possibility of such damages.</p>
+                </section>
+
+                <!-- 11. No Warranty -->
+                <section class="section" id="tc-no-warranty">
+                    <h2>11. No Warranty Disclaimer</h2>
+                    <div class="highlight-box">
+                        <strong>AS IS &mdash; NO WARRANTIES</strong>
+                        THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE,&rdquo; WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, OR THAT THE SOFTWARE WILL BE ERROR-FREE, UNINTERRUPTED, OR SECURE. YOUR USE IS AT YOUR OWN DISCRETION AND RISK.
+                    </div>
+                    <p>Some jurisdictions do not allow the exclusion of implied warranties. In such jurisdictions, the above exclusion may not apply to you, but shall apply to the maximum extent permitted by law.</p>
+                </section>
+
+                <!-- 12. Indemnification -->
+                <section class="section" id="tc-indemnification">
+                    <h2>12. Indemnification</h2>
+                    <p>You agree to indemnify, defend, and hold harmless Krunal Rana, all contributors to LLM Grid, and their respective officers, directors, employees, and agents from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&rsquo; fees) arising from:</p>
+                    <ul>
+                        <li>Your use or misuse of the Software.</li>
+                        <li>Your violation of these Terms.</li>
+                        <li>Your violation of any third-party rights, including intellectual property or privacy rights.</li>
+                        <li>Your prompts or generated outputs that cause harm to others.</li>
+                    </ul>
+                </section>
+
+                <!-- 13. Termination -->
+                <section class="section" id="tc-termination">
+                    <h2>13. Termination</h2>
+                    <p>We reserve the right to suspend or terminate your access to any hosted services at our sole discretion, without prior notice, for conduct that we believe violates these Terms or is otherwise harmful to us, other users, or third parties. Upon termination, your right to use the hosted service ceases immediately. Self-hosted instances are unaffected by such termination. Provisions that by their nature should survive termination (including Limitation of Liability, No Warranty, and Indemnification) shall survive.</p>
+                </section>
+
+                <!-- 14. Governing Law -->
+                <section class="section" id="tc-governing-law">
+                    <h2>14. Governing Law</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of <strong>India</strong>, specifically the state of <strong>Gujarat</strong>, without regard to its conflict of law principles. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts located in <strong>Surat, Gujarat, India</strong>.</p>
+                    <p>For international users: you agree to comply with all local laws applicable to your use of the Software. The United Nations Convention on Contracts for the International Sale of Goods (CISG) does not apply.</p>
+                </section>
+
+                <!-- 15. Changes to Terms -->
+                <section class="section" id="tc-changes">
+                    <h2>15. Changes to Terms</h2>
+                    <p>We may modify these Terms at any time. Changes will be effective upon posting. For material changes, we will make reasonable efforts to notify users via the project repository, website, or in-app notification. Your continued use after changes are posted constitutes acceptance. If you disagree with the changes, you must stop using the Software.</p>
+                </section>
+
+                <!-- 16. Contact -->
+                <section class="section" id="tc-contact">
+                    <h2>16. Contact Information</h2>
+                    <p>For legal inquiries, concerns, or to report violations of these Terms:</p>
+                    <div class="highlight-box">
+                        <strong>Legal Contact</strong>
+                        Krunal Rana<br>
+                        Email: <a href="mailto:support@llmgrid.com">support@llmgrid.com</a><br>
+                        GitHub: <a href="https://github.com/krunalrana/llm-grid" target="_blank" rel="noopener">github.com/krunalrana/llm-grid</a><br>
+                        Jurisdiction: Surat, Gujarat, India
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+        <p>&copy; 2026 <strong>Krunal Rana</strong> &mdash; LLM Grid. Open-source software. &middot;
+            <a href="https://github.com/krunalrana/llm-grid" target="_blank" rel="noopener">GitHub Repository</a> &middot;
+            <a href="mailto:support@llmgrid.com">support@llmgrid.com</a>
+        </p>
+    </footer>
+
+    <!-- ═══════════ MOBILE SIDEBAR TOGGLE ═══════════ -->
+    <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle navigation" title="Table of Contents">
+        ☰
+    </button>
+
+    <script>
+        (function() {
+            // ── DOM references ─────────────────
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const policyContents = document.querySelectorAll('.policy-content');
+            const sidebarNav = document.getElementById('sidebarNav');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const mobileToggle = document.getElementById('mobileSidebarToggle');
+            const contentArea = document.getElementById('contentArea');
+
+            // ── Section ID lists for each tab ──
+            const privacySections = [
+                { id: 'pp-introduction', label: '1. Introduction' },
+                { id: 'pp-information-we-collect', label: '2. Information We Collect' },
+                { id: 'pp-api-keys', label: '3. API Keys and Credentials' },
+                { id: 'pp-how-information-is-used', label: '4. How Information Is Used' },
+                { id: 'pp-third-party-ai', label: '5. Third-Party AI Providers' },
+                { id: 'pp-data-retention', label: '6. Data Retention' },
+                { id: 'pp-security', label: '7. Security Measures' },
+                { id: 'pp-cookies', label: '8. Cookies and Analytics' },
+                { id: 'pp-user-rights', label: '9. User Rights' },
+                { id: 'pp-international', label: '10. International Users' },
+                { id: 'pp-children', label: '11. Children\'s Privacy' },
+                { id: 'pp-changes', label: '12. Changes to This Policy' },
+                { id: 'pp-contact', label: '13. Contact Information' },
+                { id: 'pp-open-source', label: '14. Open Source Disclaimer' },
+            ];
+
+            const termsSections = [
+                { id: 'tc-acceptance', label: '1. Acceptance of Terms' },
+                { id: 'tc-description', label: '2. Description of Service' },
+                { id: 'tc-user-responsibilities', label: '3. User Responsibilities' },
+                { id: 'tc-api-key-usage', label: '4. API Key Usage' },
+                { id: 'tc-third-party-disclaimer', label: '5. Third-Party Services Disclaimer' },
+                { id: 'tc-open-source-license', label: '6. Open Source License Notice' },
+                { id: 'tc-intellectual-property', label: '7. Intellectual Property' },
+                { id: 'tc-acceptable-use', label: '8. Acceptable Use Policy' },
+                { id: 'tc-prohibited', label: '9. Prohibited Activities' },
+                { id: 'tc-limitation', label: '10. Limitation of Liability' },
+                { id: 'tc-no-warranty', label: '11. No Warranty Disclaimer' },
+                { id: 'tc-indemnification', label: '12. Indemnification' },
+                { id: 'tc-termination', label: '13. Termination' },
+                { id: 'tc-governing-law', label: '14. Governing Law (India)' },
+                { id: 'tc-changes', label: '15. Changes to Terms' },
+                { id: 'tc-contact', label: '16. Contact Information' },
+            ];
+
+            let currentTab = 'privacy';
+            let activeSectionId = null;
+
+            // ── Build sidebar navigation ──────
+            function buildSidebar(sections) {
+                sidebarNav.innerHTML = '';
+                // Add a subtle label
+                const labelLi = document.createElement('li');
+                labelLi.className = 'sidebar-section-label';
+                labelLi.textContent = currentTab === 'privacy' ? 'Privacy Policy' : 'Terms & Conditions';
+                sidebarNav.appendChild(labelLi);
+
+                sections.forEach(sec => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = '#' + sec.id;
+                    a.textContent = sec.label;
+                    a.dataset.target = sec.id;
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetEl = document.getElementById(sec.id);
+                        if (targetEl) {
+                            targetEl.scrollIntoView({ behavior: 'smooth' });
+                            // Close mobile sidebar
+                            closeSidebar();
+                            // Set active immediately for better UX
+                            setActiveSidebarLink(sec.id);
+                        }
+                    });
+                    li.appendChild(a);
+                    sidebarNav.appendChild(li);
+                });
+            }
+
+            function setActiveSidebarLink(sectionId) {
+                const links = sidebarNav.querySelectorAll('a');
+                links.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.target === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+                activeSectionId = sectionId;
+            }
+
+            // ── Switch tabs ──────────────────
+            function switchTab(tabName) {
+                currentTab = tabName;
+                // Update tab buttons
+                tabBtns.forEach(btn => {
+                    const isActive = btn.dataset.tab === tabName;
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                // Show/hide content
+                policyContents.forEach(content => {
+                    content.classList.toggle('active', content.id === 'policy-' + tabName);
+                });
+                // Rebuild sidebar
+                const sections = tabName === 'privacy' ? privacySections : termsSections;
+                buildSidebar(sections);
+                // Reset active section
+                activeSectionId = null;
+                // Scroll to top of content
+                contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Update URL hash without jumping
+                const firstSection = sections[0];
+                if (firstSection && window.location.hash !== '#' + firstSection.id) {
+                    history.replaceState(null, '', '#' + firstSection.id);
+                }
+                // Close mobile sidebar
+                closeSidebar();
+            }
+
+            // ── Tab button listeners ─────────
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabName = btn.dataset.tab;
+                    if (tabName !== currentTab) {
+                        switchTab(tabName);
+                    }
+                });
+            });
+
+            // ── Scroll spy ──────────────────
+            function getCurrentVisibleSection(sections) {
+                const viewportTop = window.scrollY;
+                const offset = parseInt(getComputedStyle(document.documentElement)
+                    .scrollPaddingTop) || (64 + 52 + 24);
+                let currentId = null;
+
+                // Check all sections
+                const allSectionEls = sections
+                    .map(s => document.getElementById(s.id))
+                    .filter(el => el !== null);
+
+                for (let i = allSectionEls.length - 1; i >= 0; i--) {
+                    const el = allSectionEls[i];
+                    const rect = el.getBoundingClientRect();
+                    const elTop = rect.top + window.scrollY;
+                    if (window.scrollY >= elTop - offset - 40) {
+                        currentId = el.id;
+                        break;
+                    }
+                }
+                // If we're at the very top, pick the first section
+                if (!currentId && allSectionEls.length > 0) {
+                    currentId = allSectionEls[0].id;
+                }
+                return currentId;
+            }
+
+            function onScroll() {
+                const sections = currentTab === 'privacy' ? privacySections : termsSections;
+                const visibleId = getCurrentVisibleSection(sections);
+                if (visibleId && visibleId !== activeSectionId) {
+                    setActiveSidebarLink(visibleId);
+                    // Update URL hash silently
+                    if (window.location.hash !== '#' + visibleId) {
+                        history.replaceState(null, '', '#' + visibleId);
+                    }
+                }
+            }
+
+            // ── Mobile sidebar ──────────────
+            function openSidebar() {
+                sidebar.classList.add('open');
+                sidebarOverlay.classList.add('show');
+                mobileToggle.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('open');
+                sidebarOverlay.classList.remove('show');
+                mobileToggle.textContent = '☰';
+                document.body.style.overflow = '';
+            }
+
+            function toggleSidebar() {
+                if (sidebar.classList.contains('open')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            }
+
+            mobileToggle.addEventListener('click', toggleSidebar);
+            sidebarOverlay.addEventListener('click', closeSidebar);
+
+            // Close sidebar on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+                    closeSidebar();
+                }
+            });
+
+            // Close sidebar when a link inside it is clicked (handled in buildSidebar)
+            // Also close on window resize if it becomes desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 900 && sidebar.classList.contains('open')) {
+                    closeSidebar();
+                }
+            });
+
+            // ── Initialization ──────────────
+            function init() {
+                // Determine initial tab from URL hash or default to privacy
+                const hash = window.location.hash;
+                let initialTab = 'privacy';
+                if (hash) {
+                    // Check if hash matches a terms section
+                    const isTerms = termsSections.some(s => '#' + s.id === hash);
+                    if (isTerms) initialTab = 'terms';
+                }
+                switchTab(initialTab);
+
+                // After a short delay, scroll to the hashed section if present
+                if (hash) {
+                    setTimeout(() => {
+                        const targetEl = document.querySelector(hash);
+                        if (targetEl) {
+                            targetEl.scrollIntoView({ behavior: 'smooth' });
+                            setActiveSidebarLink(hash.replace('#', ''));
+                        }
+                    }, 400);
+                }
+
+                // Set up scroll listener
+                window.addEventListener('scroll', onScroll, { passive: true });
+
+                // Initial scroll check
+                setTimeout(onScroll, 500);
+            }
+
+            // ── Handle hash changes from browser navigation ──
+            window.addEventListener('hashchange', function() {
+                const hash = window.location.hash;
+                if (!hash) return;
+                // Determine which tab the hash belongs to
+                const isPrivacy = privacySections.some(s => '#' + s.id === hash);
+                const isTerms = termsSections.some(s => '#' + s.id === hash);
+                if (isPrivacy && currentTab !== 'privacy') {
+                    switchTab('privacy');
+                } else if (isTerms && currentTab !== 'terms') {
+                    switchTab('terms');
+                }
+                // Scroll to the element
+                setTimeout(() => {
+                    const targetEl = document.querySelector(hash);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                        setActiveSidebarLink(hash.replace('#', ''));
+                    }
+                }, 300);
+            });
+
+            // ── Start ───────────────────────
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
