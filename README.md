@@ -1,7 +1,3 @@
-<div align="center">
-<img width="1200" height="475" alt="LLM Grid Banner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
-
 # LLM Grid - AI Chat Application
 
 A modern Android application that provides an interactive chat interface powered by AI models through OpenRouter API. This app features local storage, offline capabilities, and a clean, intuitive UI built with Jetpack Compose.
