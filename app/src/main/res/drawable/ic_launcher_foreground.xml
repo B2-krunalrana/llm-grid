@@ -1,0 +1,55 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Base grid lines (light gray connecting background lines) -->
+    <!-- Horizontal lines -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.6"
+        android:pathData="M34,34 L74,34 M34,54 L74,54 M34,74 L74,74" />
+    <!-- Vertical lines -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.6"
+        android:pathData="M34,34 L34,74 M54,34 L54,74 M74,34 L74,74" />
+        
+    <!-- Active professional connection paths (LLMGrid Blue #0056C6 style) -->
+    <!-- Connect Column Left (34,34) to (34,74) -->
+    <path
+        android:strokeColor="#0056C6"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:pathData="M34,34 L34,74" />
+    <!-- Connect Bottom Row Left to Center (34,74) to (54,74) -->
+    <path
+        android:strokeColor="#0056C6"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:pathData="M34,74 L54,74" />
+
+    <!-- Inactive Dark Nodes (Slate #1E293B, radius 2.8) -->
+    <!-- Center column, upper row -->
+    <path android:fillColor="#1E293B" android:pathData="M54,34 M54,31.2 a2.8,2.8 0 1,1 0,5.6 a2.8,2.8 0 1,1 0,-5.6" />
+    <!-- Center column, middle row -->
+    <path android:fillColor="#1E293B" android:pathData="M54,54 M54,51.2 a2.8,2.8 0 1,1 0,5.6 a2.8,2.8 0 1,1 0,-5.6" />
+    <!-- Right column, upper row -->
+    <path android:fillColor="#1E293B" android:pathData="M74,34 M74,31.2 a2.8,2.8 0 1,1 0,5.6 a2.8,2.8 0 1,1 0,-5.6" />
+    <!-- Right column, middle row -->
+    <path android:fillColor="#1E293B" android:pathData="M74,54 M74,51.2 a2.8,2.8 0 1,1 0,5.6 a2.8,2.8 0 1,1 0,-5.6" />
+    <!-- Right column, lower row -->
+    <path android:fillColor="#1E293B" android:pathData="M74,74 M74,71.2 a2.8,2.8 0 1,1 0,5.6 a2.8,2.8 0 1,1 0,-5.6" />
+
+    <!-- Active Highlighted Nodes (Vibrant Accent Blue #0056C6, radius 3.8 for extra depth) -->
+    <!-- Left column, upper row -->
+    <path android:fillColor="#0056C6" android:pathData="M34,34 M34,30.2 a3.8,3.8 0 1,1 0,7.6 a3.8,3.8 0 1,1 0,-7.6" />
+    <!-- Left column, middle row -->
+    <path android:fillColor="#0056C6" android:pathData="M34,54 M34,50.2 a3.8,3.8 0 1,1 0,7.6 a3.8,3.8 0 1,1 0,-7.6" />
+    <!-- Left column, lower row -->
+    <path android:fillColor="#0056C6" android:pathData="M34,74 M34,70.2 a3.8,3.8 0 1,1 0,7.6 a3.8,3.8 0 1,1 0,-7.6" />
+    <!-- Center column, lower row -->
+    <path android:fillColor="#0056C6" android:pathData="M54,74 M54,70.2 a3.8,3.8 0 1,1 0,7.6 a3.8,3.8 0 1,1 0,-7.6" />
+
+</vector>

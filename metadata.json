@@ -1,0 +1,8 @@
+{
+  "name": "LLMGrid",
+  "description": "LLMGrid - Your gateway to every LLM. Chat with any LLM model with secure local storage, backup export/import and modern visual integrations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

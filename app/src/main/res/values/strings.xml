@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LLMGrid</string>
+    <string name="developer_title">Krunal Rana</string>
+    <string name="developer_subtitle">Creator &amp; Android Enthusiast</string>
+    <string name="developer_connect_prompt">Connect on LinkedIn</string>
+    <string name="developer_connect_description">Let&#8217;s collaborate on intelligent Android systems and custom AI integrations.</string>
+</resources>
